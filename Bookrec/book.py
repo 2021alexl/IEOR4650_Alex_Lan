@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('/Users/alex/Desktop/Bookrec/Books.csv')
+df = pd.read_csv('Books.csv')
 
 def edit_distance(str1, str2):
     # Initialize a 2D array to store the edit distances
@@ -45,7 +45,7 @@ def main():
         if st.session_state.input == 1:
             if st.button("Let's Find!", key = 2):
                 st.write('success')
-                df = pd.read_csv('/Users/alex/Desktop/Bookrec/Books.csv')
+                df = pd.read_csv('Books.csv')
                 booklist = df['Book-Title'].tolist()
                 editdistance = []
                 for i in range(len(booklist)): 
@@ -71,7 +71,7 @@ def main():
     markdown_text = f"<p style='font-family:sans-serif; color:#8B0000; font-size: 28px;'>{content2}</p>"
     st.markdown(markdown_text, unsafe_allow_html=True)
     st.image(
-        "/Users/alex/Desktop/Bookrec/main.png",
+        "main.png",
         width=500)
     
     
