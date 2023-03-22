@@ -27,6 +27,7 @@ def edit_distance(str1, str2):
     return dp[-1][-1]
 
 def main():
+    st.session_state.choose = 0
     st.session_state.input = 0
     st.session_state.ed = 0
     st.session_state.bl = 0
@@ -67,6 +68,9 @@ def main():
                     )
                     st.write('You selected:', option)
                     st.session_state.select = option
+                    st.write('Do you mean any of those book?')
+                    if st.button("Let's Find!", key = 2):
+                        st.session_state.choose = 1
     content2 = 'Alex Lan Book Recommendation📖'            
     markdown_text = f"<p style='font-family:sans-serif; color:#8B0000; font-size: 28px;'>{content2}</p>"
     st.markdown(markdown_text, unsafe_allow_html=True)
@@ -76,7 +80,7 @@ def main():
     
     
     col1, col2 = st.columns([1, 1], gap="large")
-    if 1 == 1:
+    if st.session_state.choose == 1:
         if st.session_state.select != 0:
             for i in range(4):
                 booklist = st.session_state.bl 
