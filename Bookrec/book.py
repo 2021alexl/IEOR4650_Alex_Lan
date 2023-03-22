@@ -41,6 +41,9 @@ def main():
             markdown_text = f"<p style='font-family:sans-serif; color:#8B0000; font-size: 16px;'>{content1}</p>"
             st.markdown(markdown_text, unsafe_allow_html=True)
         option = st.text_input("Tell me about your favorite book, and I will make recommendation!")
+        if len(option) > 0:
+            st.session_state.choose = 1
+            st.session_state.select = 1
         
     content2 = 'Alex Lan Book Recommendation📖'            
     markdown_text = f"<p style='font-family:sans-serif; color:#8B0000; font-size: 28px;'>{content2}</p>"
