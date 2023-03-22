@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('Books.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/2021alexl/IEOR4650_Alex_Lan/main/Bookrec/Books.csv')
 
 def edit_distance(str1, str2):
     # Initialize a 2D array to store the edit distances
