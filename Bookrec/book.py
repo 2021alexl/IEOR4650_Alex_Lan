@@ -69,7 +69,7 @@ def main():
                     st.write('You selected:', option)
                     st.session_state.select = option
                     st.write('Do you mean any of those book?')
-                    if st.button("Let's Find!", key = 2):
+                    if st.button("Let's Find!", key = 4):
                         st.session_state.choose = 1
     content2 = 'Alex Lan Book Recommendation📖'            
     markdown_text = f"<p style='font-family:sans-serif; color:#8B0000; font-size: 28px;'>{content2}</p>"
