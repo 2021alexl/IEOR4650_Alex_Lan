@@ -57,8 +57,8 @@ def main():
     if st.session_state.choose == 1:
         if st.session_state.select != 0:
             for i in range(4):
-                booklist = st.session_state.bl 
-                df= st.session_state.df = df
+                df = pd.read_csv('https://raw.githubusercontent.com/2021alexl/IEOR4650_Alex_Lan/main/Bookrec/Books.csv')
+                booklist = df['Book-Title'].tolist()
                 number = int(np.random.randint(1,len(booklist),1))
                 book_title = df['Book-Title'][number]
                 book_author = df['Book-Author'][number]
