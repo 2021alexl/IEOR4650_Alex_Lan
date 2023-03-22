@@ -40,37 +40,8 @@ def main():
             content1 = 'I am utilizing a comprehensive and diverse collection of books as my dataset to conduct collaborative filtering, a technique that aims to analyze the preferences and behaviors of users to generate personalized recommendations. With the ultimate goal of delivering an unparalleled book recommendation experience, I am working diligently to develop a sophisticated and advanced collaborative filtering model that takes into account various factors such as user ratings, book genres, author preferences, and publication dates. By combining state-of-the-art machine learning algorithms with cutting-edge data analysis techniques, my aspiration is to create a recommendation system that is both accurate and intuitive, capable of catering to the unique tastes and interests of each individual user. '
             markdown_text = f"<p style='font-family:sans-serif; color:#8B0000; font-size: 16px;'>{content1}</p>"
             st.markdown(markdown_text, unsafe_allow_html=True)
-        favbook = st.text_input("Tell me about your favorite book, and I will make recommendation!")
-        if len(favbook) > 0:
-            st.session_state.input = 1
-        if st.session_state.input == 1:
-            if st.button("Let's Find!", key = 2):
-                st.write('success')
-                df = pd.read_csv('https://raw.githubusercontent.com/2021alexl/IEOR4650_Alex_Lan/main/Bookrec/Books.csv')
-                booklist = df['Book-Title'].tolist()
-                editdistance = []
-                for i in range(len(booklist)): 
-                    if 1 == 1:
-                        f = []
-                        f += [booklist[i]] 
-                        f += [edit_distance(str(favbook), str(booklist[i]))] 
-                        editdistance += [f]
-                st.session_state.ed = editdistance
-                st.session_state.bl = booklist
-                st.session_state.df = df
-                if st.session_state.ed != 0:
-                    editdistance = st.session_state.ed
-                    searchbase = 0
-                    st.session_state.select = False
-                    select = [i[0] for i in editdistance[:6]]
-                    option = st.selectbox(
-    'How would you like to be contacted?',select
-                    )
-                    st.write('You selected:', option)
-                    st.session_state.select = option
-                    st.write('Do you mean any of those book?')
-                    if st.button("Let's Find!", key = 4):
-                        st.session_state.choose = 1
+        option = st.text_input("Tell me about your favorite book, and I will make recommendation!")
+        
     content2 = 'Alex Lan Book Recommendation📖'            
     markdown_text = f"<p style='font-family:sans-serif; color:#8B0000; font-size: 28px;'>{content2}</p>"
     st.markdown(markdown_text, unsafe_allow_html=True)
